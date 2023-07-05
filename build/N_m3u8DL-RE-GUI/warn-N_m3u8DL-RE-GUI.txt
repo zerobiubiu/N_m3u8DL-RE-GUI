@@ -1,0 +1,59 @@
+
+This file lists modules PyInstaller was not able to find. This does not
+necessarily mean this module is required for running your program. Python and
+Python 3rd-party packages include a lot of conditional or optional modules. For
+example the module 'ntpath' only exists on Windows, whereas the module
+'posixpath' only exists on Posix systems.
+
+Types if import:
+* top-level: imported at the top-level - look at these first
+* conditional: imported within an if-statement
+* delayed: imported within a function
+* optional: imported within a try-except-statement
+
+IMPORTANT: Do NOT post this list to the issue-tracker. Use it as a basis for
+            tracking down the missing module yourself. Thanks!
+
+missing module named pyimod02_importers - imported by /opt/homebrew/lib/python3.10/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgutil.py (top-level), /opt/homebrew/lib/python3.10/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgres.py (top-level)
+missing module named 'org.python' - imported by copy (optional), xml.sax (delayed, conditional)
+missing module named org - imported by pickle (optional)
+missing module named nt - imported by os (delayed, conditional, optional), ntpath (optional), shutil (conditional), importlib._bootstrap_external (conditional), ctypes (delayed, conditional)
+missing module named _manylinux - imported by pkg_resources._vendor.packaging._manylinux (delayed, optional), packaging._manylinux (delayed, optional)
+missing module named pep517 - imported by importlib.metadata (delayed)
+missing module named _frozen_importlib_external - imported by importlib._bootstrap (delayed), importlib (optional), importlib.abc (optional), zipimport (top-level)
+excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional), zipimport (top-level)
+missing module named winreg - imported by importlib._bootstrap_external (conditional), mimetypes (optional), urllib.request (delayed, conditional, optional), platform (delayed, optional), desktop_notifier.winrt (top-level), pkg_resources._vendor.appdirs (delayed, conditional)
+missing module named pyparsing - imported by pkg_resources._vendor.pyparsing.diagram (top-level)
+missing module named railroad - imported by pkg_resources._vendor.pyparsing.diagram (top-level)
+missing module named _winapi - imported by encodings (delayed, conditional, optional), ntpath (optional), subprocess (optional), mimetypes (optional), multiprocessing.connection (optional), multiprocessing.spawn (delayed, conditional), multiprocessing.reduction (conditional), multiprocessing.shared_memory (conditional), multiprocessing.heap (conditional), multiprocessing.popen_spawn_win32 (top-level), asyncio.windows_events (top-level), asyncio.windows_utils (top-level)
+missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.markers (top-level), pkg_resources._vendor.packaging.requirements (top-level)
+missing module named 'pkg_resources.extern.importlib_resources' - imported by pkg_resources._vendor.jaraco.text (optional)
+missing module named 'typing.io' - imported by importlib.resources (top-level)
+missing module named 'pkg_resources.extern.more_itertools' - imported by pkg_resources._vendor.jaraco.functools (top-level)
+missing module named 'win32com.shell' - imported by pkg_resources._vendor.appdirs (conditional, optional)
+missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs (delayed, conditional, optional)
+missing module named com - imported by pkg_resources._vendor.appdirs (delayed)
+missing module named win32api - imported by pkg_resources._vendor.appdirs (delayed, conditional, optional)
+missing module named win32com - imported by pkg_resources._vendor.appdirs (delayed)
+missing module named _winreg - imported by platform (delayed, optional), pkg_resources._vendor.appdirs (delayed, conditional)
+missing module named pkg_resources.extern.packaging - imported by pkg_resources.extern (top-level), pkg_resources (top-level)
+missing module named pkg_resources.extern.appdirs - imported by pkg_resources.extern (top-level), pkg_resources (top-level)
+missing module named 'pkg_resources.extern.jaraco' - imported by pkg_resources (top-level), pkg_resources._vendor.jaraco.text (top-level)
+missing module named 'java.lang' - imported by platform (delayed, optional), xml.sax._exceptions (conditional)
+missing module named vms_lib - imported by platform (delayed, optional)
+missing module named java - imported by platform (delayed)
+missing module named multiprocessing.BufferTooShort - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
+missing module named multiprocessing.get_context - imported by multiprocessing (top-level), multiprocessing.pool (top-level), multiprocessing.managers (top-level), multiprocessing.sharedctypes (top-level)
+missing module named multiprocessing.TimeoutError - imported by multiprocessing (top-level), multiprocessing.pool (top-level)
+missing module named msvcrt - imported by subprocess (optional), getpass (optional), multiprocessing.spawn (delayed, conditional), multiprocessing.popen_spawn_win32 (top-level), asyncio.windows_events (top-level), asyncio.windows_utils (top-level)
+missing module named multiprocessing.set_start_method - imported by multiprocessing (top-level), multiprocessing.spawn (top-level)
+missing module named multiprocessing.get_start_method - imported by multiprocessing (top-level), multiprocessing.spawn (top-level)
+missing module named 'winsdk._winrt' - imported by desktop_notifier.winrt (top-level)
+missing module named 'winsdk.windows' - imported by desktop_notifier.winrt (top-level)
+missing module named winsdk - imported by desktop_notifier.winrt (top-level)
+missing module named 'dbus_next.aio' - imported by desktop_notifier.dbus (top-level)
+missing module named dbus_next - imported by desktop_notifier.dbus (top-level)
+missing module named setuptools_scm - imported by rubicon.objc (optional)
+missing module named _overlapped - imported by asyncio.windows_events (top-level)
+missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio (delayed, conditional), asyncio.events (delayed, conditional)

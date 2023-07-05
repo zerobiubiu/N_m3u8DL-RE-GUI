@@ -1,0 +1,9 @@
+﻿LOG 2023/07/05
+Save Path: /Users/wang/Code/Git/N_m3u8DL-RE-GUI/bin/Logs
+Task Start: 2023/07/05 15:04:38
+Task CommandLine: /Users/wang/Code/Git/N_m3u8DL-RE-GUI/bin/N_m3u8DL-RE https://kmi.522n.com/20230630/ZTNlZTQyMj/160755/1280/hls/decrypt/index.m3u8 --tmp-dir /tmp/N_m3u8DL-RE --save-dir /Users/wang/Downloads/ --save-name 精油按摩，促进夫妻和谐！ --thread-count 16
+
+15:04:38.632 INFO : N_m3u8DL-RE (Beta version) 20230628
+15:04:38.637 EXTRA: ffmpeg => /opt/homebrew/bin/ffmpeg
+15:04:38.637 INFO : 加载URL: https://kmi.522n.com/20230630/ZTNlZTQyMj/160755/1280/hls/decrypt/index.m3u8
+15:04:44.986 ERROR: One or more errors occurred. (The SSL connection could not be established, see inner exception.)
