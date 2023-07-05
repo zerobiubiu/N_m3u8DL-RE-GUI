@@ -60,7 +60,7 @@
  [],
  False,
  False,
- 1688541346,
+ 1688548029,
  [('runw',
    '/opt/homebrew/lib/python3.10/site-packages/PyInstaller/bootloader/Darwin-64bit/runw',
    'EXECUTABLE')])

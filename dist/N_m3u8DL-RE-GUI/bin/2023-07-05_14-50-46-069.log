@@ -1,9 +1,0 @@
-﻿LOG 2023/07/05
-Save Path: /Users/wang/Code/Git/N_m3u8DL-RE-GUI/bin/Logs
-Task Start: 2023/07/05 14:50:46
-Task CommandLine: /Users/wang/Code/Git/N_m3u8DL-RE-GUI/bin/N_m3u8DL-RE https://kmi.522n.com/20230704/YmJlYmM2Nj/163210/1280/hls/decrypt/index.m3u8 --tmp-dir /tmp/N_m3u8DL-RE --save-dir /Users/wang/Downloads/ --save-name 小村庄里的共享人妻 --thread-count 16
-
-14:50:46.155 INFO : N_m3u8DL-RE (Beta version) 20230628
-14:50:46.157 EXTRA: ffmpeg => /opt/homebrew/bin/ffmpeg
-14:50:46.157 INFO : 加载URL: https://kmi.522n.com/20230704/YmJlYmM2Nj/163210/1280/hls/decrypt/index.m3u8
-14:50:52.467 ERROR: One or more errors occurred. (The SSL connection could not be established, see inner exception.)
