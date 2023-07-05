@@ -4,6 +4,8 @@
 
 ## 使用说明
 
+> N_m3u8DL-RE 需要安装 ffmpeg
+
 我仅编译了 macOS(Arm64) 版本的,有需要其他版本的自行编译即可
 
 ![截图](./doc/photo/Snipaste_2023-07-05_12-22-36.png)

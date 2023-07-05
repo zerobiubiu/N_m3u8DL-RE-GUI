@@ -4,12 +4,17 @@ import subprocess
 import asyncio
 from desktop_notifier import DesktopNotifier
 from PySide6 import QtWidgets
-from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QVBoxLayout, QHBoxLayout, QCheckBox, QSpinBox, QComboBox, QPushButton, QTextEdit, QFileDialog, QMessageBox
+from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QVBoxLayout, QHBoxLayout, QSpinBox, QPushButton, QTextEdit, QFileDialog, QMessageBox
 from PySide6.QtCore import QDateTime, Qt
 from PySide6.QtGui import QFont
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 cli_path = os.path.join(current_dir, 'bin/N_m3u8DL-RE')
+
+
+class PlainTextEdit(QTextEdit):
+    def insertFromMimeData(self, source):
+        self.insertPlainText(source.text())
 
 
 async def send_notification(title, text):
@@ -27,7 +32,7 @@ layout = QVBoxLayout()
 # input
 input_label = QLabel('下载链接')
 input_label.setAlignment(Qt.AlignCenter)
-input_textedit = QTextEdit()
+input_textedit = PlainTextEdit()
 input_layout = QVBoxLayout()
 input_layout.addWidget(input_label)
 input_layout.addWidget(input_textedit)
@@ -36,7 +41,7 @@ layout.addLayout(input_layout)
 # save-name
 save_name_label = QLabel('保存文件名')
 save_name_label.setAlignment(Qt.AlignCenter)
-save_name_textedit = QTextEdit()
+save_name_textedit = PlainTextEdit()
 save_name_layout = QVBoxLayout()
 save_name_layout.addWidget(save_name_label)
 save_name_layout.addWidget(save_name_textedit)
@@ -85,6 +90,25 @@ def on_save_dir_button_clicked():
 
 save_dir_button.clicked.connect(on_save_dir_button_clicked)
 
+log_dir_label = QLabel('日志目录')
+log_dir_input = QLineEdit(save_dir_input.text()+'log')
+log_dir_button = QPushButton('选择目录')
+log_dir_layout = QHBoxLayout()
+log_dir_layout.addWidget(log_dir_label)
+log_dir_layout.addWidget(log_dir_input)
+log_dir_layout.addWidget(log_dir_button)
+left_layout.addLayout(log_dir_layout)
+
+
+def on_log_dir_button_clicked():
+    dir_name = QFileDialog.getExistingDirectory(window, '选择目录')
+    if dir_name:
+        log_dir_input.setText(dir_name)
+
+
+log_dir_button.clicked.connect(on_log_dir_button_clicked)
+
+
 # thread-count
 thread_count_label = QLabel('下载线程数')
 thread_count_input = QSpinBox()
@@ -96,8 +120,8 @@ thread_count_layout.addWidget(thread_count_input)
 right_layout.addLayout(thread_count_layout)
 
 run_button = QPushButton('启动下载')
-run_button.setFont(QFont("Arial", 14))
-run_button.setFixedHeight(50)
+run_button.setFont(QFont("Arial", 28))
+run_button.setFixedHeight(100)
 
 
 def on_run_button_clicked():
@@ -130,9 +154,18 @@ def on_run_button_clicked():
                 QDateTime.currentDateTime().toString("yyyyMMddhhmmss"))
         cmd_str.append('--thread-count')
         cmd_str.append(str(thread_count_input.value()))
-        cmd_str.append('--no-log')
+        if log_dir_input.text():
+            result = subprocess.run(
+                [cli_path]+cmd_str, capture_output=True, text=True)
+            os.makedirs(log_dir_input.text(), exist_ok=True)
+            with open(log_dir_input.text()+"/"+QDateTime.currentDateTime().toString("yyyyMMddhhmmss")+"-"+save_names[i]+".log", 'w') as f:
+                f.write(result.stdout)
+                f.write(result.stderr)
+        else:
+            cmd_str.append('--no-log')
 
-        result = subprocess.run([cli_path]+cmd_str)
+        result = subprocess.run(
+            [cli_path]+cmd_str, capture_output=True, text=True)
         if result.returncode == 0:
             asyncio.run(send_notification("下载完成", cmd_str[6]+" 下载成功"))
         else:

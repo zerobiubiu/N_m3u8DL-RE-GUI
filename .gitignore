@@ -1,0 +1,16 @@
+# 日志文件
+logs/
+
+# 环境变量文件
+.env
+
+# IDE 和编辑器文件
+.vscode
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 测试文件
+test*
+temp*
