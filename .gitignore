@@ -19,3 +19,6 @@ temp*
 build/
 dist/
 *.spec
+
+# 打包目录
+packageTools/
