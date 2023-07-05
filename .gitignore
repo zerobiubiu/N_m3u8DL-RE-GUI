@@ -14,3 +14,8 @@ Thumbs.db
 # 测试文件
 test*
 temp*
+
+# 编译
+build/
+dist/
+*.spec
